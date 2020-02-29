@@ -36,27 +36,21 @@
 
             count++;
 
-            let year = document.createElement('p');
-            year.style.fontSize = "1.5em";
-            year.className = "text-primary";
+            let link_a = document.createElement('a');
+            link_a.style.display = "inline";
+            link_a.style.fontSize = "1.5em";
+            link_a.className = "card-text";
+            link_a.href = `${response.response.docs[i].web_url}`;
+            link_a.setAttribute('target','blank');
 
-
-            let info = document.createElement('p');
-            info.style.display = "inline";
-            info.style.fontSize = "1.5em";
-            info.className = "card-text";
             let strong =  document.createElement('strong');
             strong.append(document.createTextNode(response.response.docs[i].headline.main));
+            link_a.append(strong);
 
-            info.append(strong);
             div.append(span);
-            div.append(info);
-            div.append(year);
+            div.append(link_a);
 
             $('.card-body').append(div);
-            
-
-            console.log(response.response.docs[i].web_url)
         });
     }
 
