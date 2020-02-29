@@ -47,7 +47,7 @@
             info.className = "card-text";
             let strong =  document.createElement('strong');
             strong.append(document.createTextNode(response.response.docs[i].headline.main));
-            
+
             info.append(strong);
             div.append(span);
             div.append(info);
@@ -57,7 +57,7 @@
             
 
             console.log(response.response.docs[i].web_url)
-        })
+        });
     }
 
   });
